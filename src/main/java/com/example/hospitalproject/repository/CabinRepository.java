@@ -15,4 +15,6 @@ public interface CabinRepository extends JpaRepository<Cabin,Long > {
 
     @Query(value = "SELECT distinct(price) FROM hospitaldb.cabin", nativeQuery = true)
     List<Object> priceList();
+
+    List<Cabin> findAllByCabinType(String cabintype);
 }

@@ -14,7 +14,7 @@ public class CabinService {
     CabinRepository cabinRepository;
 
 
-    public List<Object>listOfCabin(){
+    public List<Cabin>listOfCabin(){
 
         List<Object> objects = cabinRepository.listOfCabin();
         List<Cabin> cabinList = new ArrayList<>();
@@ -25,11 +25,15 @@ public class CabinService {
             cabinList.add(cabin);
         });
 //        return cabinList;
-        return objects;
+        return cabinList;
     }
 
-    public List<Cabin>listOfRoom(){
-        return cabinRepository.findAll();
+    public List<Cabin>listOfRoom( String cabintype){
+        if (cabintype==null){
+            return cabinRepository.findAll();
+        }else {
+            return cabinRepository.findAllByCabinType(cabintype);
+        }
     }
 
     public List<Object>priceList(){
