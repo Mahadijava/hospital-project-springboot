@@ -17,6 +17,5 @@ public class Cabin {
     private Long price;
     private String roomNumber;
     private String cabinType;
-    private String status;
-
+    private Boolean status;
 }

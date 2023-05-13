@@ -32,7 +32,7 @@ public class CabinService {
         if (cabintype==null){
             return cabinRepository.findAll();
         }else {
-            return cabinRepository.findAllByCabinType(cabintype);
+            return cabinRepository.getAllByCabinType(cabintype);
         }
     }
 

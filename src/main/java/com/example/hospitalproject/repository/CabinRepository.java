@@ -3,6 +3,7 @@ package com.example.hospitalproject.repository;
 import com.example.hospitalproject.entity.Cabin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -16,5 +17,7 @@ public interface CabinRepository extends JpaRepository<Cabin,Long > {
     @Query(value = "SELECT distinct(price) FROM hospitaldb.cabin", nativeQuery = true)
     List<Object> priceList();
 
-    List<Cabin> findAllByCabinType(String cabintype);
+
+    @Query(value = "SELECT * FROM cabin where cabin_type = :cabinType and status = true", nativeQuery = true)
+    List<Cabin> getAllByCabinType(@Param(value = "cabinType") String cabinType);
 }
