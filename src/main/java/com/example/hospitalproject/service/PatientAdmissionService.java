@@ -31,8 +31,9 @@ public class PatientAdmissionService {
                     old.setAdmissionDate(patientAdmission.getAdmissionDate());
                     old.setReleaseDate(patientAdmission.getReleaseDate());
                     old.setStatus(patientAdmission.getStatus());
-                    old.setBedType(patientAdmission.getBedType());
-                    old.setBedCharge(patientAdmission.getBedCharge());
+                    old.setCabinType(patientAdmission.getCabinType());
+                    old.setRoomNumber(patientAdmission.getRoomNumber());
+                    old.setPrice(patientAdmission.getPrice());
                     old.setTotalBedBill(patientAdmission.getTotalBedBill());
                     return admissionRepository.save(old);
                 })

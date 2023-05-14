@@ -15,8 +15,7 @@ public class PatientAdmission extends BaseEntity{
             patientPhone, patientAddress,
             gender, age,
             doctorName, department,
-            appointmentDate, status,
-            bedType, description,
+             status, cabinType, roomNumber, description,
             admissionDate, releaseDate;
-    Integer bedCharge, totalBedBill;
+    Integer price, totalBedBill;
 }

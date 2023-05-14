@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/patientadmission/")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class PatientAdmissionCOntroller {
     @Autowired
     PatientAdmissionService admissionService;
