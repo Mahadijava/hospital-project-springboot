@@ -14,4 +14,9 @@ public class PathologyListNameService {
     public List<PathologyList>pathologyLists(){
         return listNameRepository.findAll();
     }
+
+
+    public Integer listofTestAmount(String labTestName){
+        return listNameRepository.totalTestAmount(labTestName);
+    }
 }

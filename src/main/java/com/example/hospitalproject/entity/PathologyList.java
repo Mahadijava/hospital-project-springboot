@@ -16,6 +16,7 @@ public class PathologyList {
     @Id
     private Integer id;
     private String labTestName;
+    private Integer amount;
 //    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pathologyLists")
 //    @ToString.Exclude
 //

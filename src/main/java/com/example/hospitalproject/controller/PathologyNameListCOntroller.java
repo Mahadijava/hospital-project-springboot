@@ -3,10 +3,7 @@ package com.example.hospitalproject.controller;
 import com.example.hospitalproject.entity.PathologyList;
 import com.example.hospitalproject.service.PathologyListNameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +17,10 @@ public class PathologyNameListCOntroller {
     @GetMapping("/pathologylist")
     List<PathologyList> getAllLabTestNames(){
         return listNameService.pathologyLists();
+    }
+
+    @GetMapping("/totalAmount/{labTestName}")
+    Integer getTotalTestAmount(@PathVariable String labTestName){
+        return listNameService.listofTestAmount(labTestName);
     }
 }
