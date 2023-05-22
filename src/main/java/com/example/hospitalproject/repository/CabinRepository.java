@@ -20,4 +20,7 @@ public interface CabinRepository extends JpaRepository<Cabin,Long > {
 
     @Query(value = "SELECT * FROM cabin where cabin_type = :cabinType and status = true", nativeQuery = true)
     List<Cabin> getAllByCabinType(@Param(value = "cabinType") String cabinType);
+
+    @Query(value = "SELECT * FROM cabin where room_number = :roomNumber and status = true", nativeQuery = true)
+    Cabin findByRoomNumber(@Param( "roomNumber") String roomNumber);
 }
