@@ -22,7 +22,9 @@ public class BillingPatient extends BaseEntity{
             patientAddress,  doctorName, department,
             cabinType, roomNumber, description,
             doctorVisit, visitDate,   patientCase, medicine, surgeryDetails;
-   Long age, price,  stayingDays,    total,    discount,
+
+
+   Long age, cabinPrice, stayingDays,  bedBill,   total,    discount,
            doctorCharge, medicinePrice, surgeryCost;
 
     LocalDateTime admissionDate, releaseDate;
