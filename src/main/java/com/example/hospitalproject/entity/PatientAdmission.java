@@ -7,6 +7,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,7 +22,7 @@ public class PatientAdmission extends BaseEntity{
              cabinType, roomNumber, description;
 
 private     Integer price, totalBedBill;
-private LocalDateTime admissionDate, releaseDate;
+//private LocalDate admissionDate, releaseDate;
 
     @Enumerated(EnumType.STRING)
     private AdmissionStatus admissionStatus;

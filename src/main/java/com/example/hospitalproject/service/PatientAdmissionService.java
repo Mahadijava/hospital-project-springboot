@@ -39,8 +39,8 @@ public class PatientAdmissionService {
                     old.setAge(patientAdmission.getAge());
                     old.setDoctorName(patientAdmission.getDoctorName());
                     old.setDepartment(patientAdmission.getDepartment());
-                    old.setAdmissionDate(patientAdmission.getAdmissionDate());
-                    old.setReleaseDate(patientAdmission.getReleaseDate());
+//                    old.setAdmissionDate(patientAdmission.getAdmissionDate());
+//                    old.setReleaseDate(patientAdmission.getReleaseDate());
                     old.setStatus(patientAdmission.getStatus());
                     old.setAdmissionStatus(patientAdmission.getAdmissionStatus());
                     old.setCabinType(patientAdmission.getCabinType());

@@ -14,24 +14,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BillingPatient extends BaseEntity{
+public class BillingPatient extends BaseEntity {
 
     @Id
     private Long id;
     String patientName, patientPhone, gender,
-            patientAddress,  doctorName, department,
+            patientAddress, doctorName, department,
             cabinType, roomNumber, description,
-            doctorVisit, visitDate,   patientCase, medicine, surgeryDetails;
+            doctorVisit, visitDate, patientCase, medicine, surgeryDetails;
 
 
-   Long age, cabinPrice, stayingDays,  bedBill,   total,    discount,
-           doctorCharge, medicinePrice, surgeryCost;
+    Long age, cabinPrice, stayingDays, bedBill, total, discount,
+            doctorCharge, medicinePrice, surgeryCost;
 
     LocalDateTime admissionDate, releaseDate;
-
-
-
-
 
 
 }

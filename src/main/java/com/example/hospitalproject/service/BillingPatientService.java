@@ -1,19 +1,23 @@
 package com.example.hospitalproject.service;
 
 import com.example.hospitalproject.entity.BillingPatient;
+import com.example.hospitalproject.entity.PatientAdmission;
 import com.example.hospitalproject.exception.UserNotFoundException;
 import com.example.hospitalproject.repository.BillingPatientRepository;
+import com.example.hospitalproject.repository.PatientAdmissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class BillingPatientService {
 
     @Autowired
     private BillingPatientRepository billingPatientRepository;
+
 
 //    public long calculateDurationInHours(LocalDateTime admissionDate, LocalDateTime releaseDate) {
 //        Duration stayingDays = Duration.between(admissionDate, releaseDate);
