@@ -36,6 +36,8 @@ public class CabinService {
         }
     }
 
+
+
     public List<Object>priceList(){
         return cabinRepository.priceList();
     }
