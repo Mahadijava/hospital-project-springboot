@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BillingPatient extends BaseEntity {
+public class  BillingPatient extends BaseEntity {
 
     @Id
     private Long id;

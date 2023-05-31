@@ -21,12 +21,12 @@ public class PatientAdmissionService {
     public List<PatientAdmission>patientAdmissionList(){return admissionRepository.findAll();}
 
     public void save(PatientAdmission patientAdmission){
-        Cabin cabin = cabinRepository.findByRoomNumber(patientAdmission.getRoomNumber());
+        Cabin cabin = cabinRepository.findByRoomNumber(patientAdmission.getRoomNumber(),true);
 
         if (cabin.equals(null)){ throw new RuntimeException("Room already booked!!");}
         cabin.setStatus(false);
         cabinRepository.save(cabin);
-        patientAdmission.setAdmissionStatus(AdmissionStatus.Admitted);
+        patientAdmission.setAdmissionStatus(AdmissionStatus.Admitted); // whenever the data is saved, this status will be sealed
         admissionRepository.save(patientAdmission);}
 
     public void update(long id, PatientAdmission patientAdmission){
@@ -47,6 +47,16 @@ public class PatientAdmissionService {
                     old.setRoomNumber(patientAdmission.getRoomNumber());
                     old.setPrice(patientAdmission.getPrice());
                     old.setTotalBedBill(patientAdmission.getTotalBedBill());
+
+
+//                    Cabin cabin = cabinRepository.findByRoomNumber(patientAdmission.getRoomNumber(), false);
+                    Cabin cabin = cabinRepository.findByRoomNumber2(patientAdmission.getRoomNumber());
+
+                    if (cabin.equals(null)){ throw new RuntimeException("Invalid room number!!");}
+                    cabin.setStatus(true);
+                    cabinRepository.save(cabin);
+
+
                     return admissionRepository.save(old);
                 })
                 .orElseGet(()->{
